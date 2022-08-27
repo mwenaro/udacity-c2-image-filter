@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
+//import isImageURL from 'image-url-validator';
+
+import {filterImageFromURL, deleteLocalFiles,isImageUrl} from './util/util';
 
 (async () => {
 
@@ -30,6 +32,39 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   /**************************************************************************** */
 
   //! END @TODO1
+ app.get('/filteredimage', (req, res)=>{
+	//retrieving and validationg the passed image_url
+	 //
+	 const url:string = req.query.image_url as string;
+	 const isValidImageUrl:boolean = isImageUrl(url); 
+
+	 const files :string[] = [];
+
+	 if(!isValidImageUrl){
+		return res.status(400).json({message:"Invalid Image URL! Please try again"});
+	}
+
+	//
+filterImageFromURL(url)
+  .then(filtered_img_url=>{
+
+	files.push(filtered_img_url);
+
+      res.sendFile(filtered_img_url, async (err)=>{
+
+	      if(err)
+		      res.status(500).json({msg:"Internal Server Error. Try again"});
+	  //delete img files from the tmp directory
+	      await deleteLocalFiles(files);
+
+      });
+
+})
+.catch(err => res.json({msg:err}));
+	
+
+
+  });
   
   // Root Endpoint
   // Displays a simple message to the user

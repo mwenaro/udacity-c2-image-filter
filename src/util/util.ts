@@ -1,5 +1,6 @@
 import fs from "fs";
 import Jimp = require("jimp");
+var imageExists = require('image-exists');
 
 // filterImageFromURL
 // helper function to download, filter, and save the filtered image locally
@@ -36,4 +37,19 @@ export async function deleteLocalFiles(files: Array<string>) {
   for (let file of files) {
     fs.unlinkSync(file);
   }
+}
+
+
+//method to validate passed image url
+//
+//
+export  function isImageUrl(url : string){
+	//Check if passed url is a valid iamge url
+	const isValidImgUrl:boolean =  url.match(/\.(jpg|jpeg|gif|png)$/) !== null;
+	//Check is image exists
+//	imageExists(url, exits=> exists && isValidImgUrl);
+	return isValidImgUrl;
+	
+	
+
 }
