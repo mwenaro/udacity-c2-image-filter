@@ -49,7 +49,4 @@ export  function isImageUrl(url : string){
 	//Check is image exists
 //	imageExists(url, exits=> exists && isValidImgUrl);
 	return isValidImgUrl;
-	
-	
-
 }
