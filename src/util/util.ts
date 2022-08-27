@@ -37,3 +37,23 @@ export async function deleteLocalFiles(files: Array<string>) {
     fs.unlinkSync(file);
   }
 }
+
+
+//method to validate passed image url
+//
+//
+export async function isImageURL(url : string){
+	//Check if passed url is a valid iamge url
+	const isValidImgUrl:boolean = url.test(/\.(jpg|jpeg|gif|png)$/);
+
+	//Check if the img exists
+	
+	let img:any = new Image();
+	let imgExists:boolean = false;
+	img.onload = function(){
+	
+		imgExists = true;
+	}
+
+	return isValidImgUrl && imgExists;
+}
