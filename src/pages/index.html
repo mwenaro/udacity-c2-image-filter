@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Filter</title>
+	<style>
+
+*{
+	border:0;
+	padding:0;
+	margin:0;
+       
+	box-sizing :border-box;
+}
+body{
+	background-color:#eee;
+	color:#000;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+
+}
+.wrapper{
+	min-width:300px;
+	min-height:300px;
+	margin-top:20px;
+	width:80%;
+	height:50%;
+	padding:30px;
+	border: 2px solid red;
+	border-radius:20px;
+	display:flex;
+	flex-direction:column;
+}
+.wrapper button{
+	min-width:5rem;
+	height:2rem;
+	border-radius:5px;
+	background-color:#0000ee;
+	color:#eee;
+	font-weight:bold;
+	outline:1px solid red;
+	font-size:1.1em;
+	margin: 2px;
+		
+}
+
+.wrapper form {
+	width:100%;
+	min-height:80px;
+	background-color:#ececec;
+	display:flex;
+	flex-direction:column;
+	align-items:space-between;
+	justify-content:space-between;
+}
+
+form input{
+ 	background-color:#fff;
+	height:30px;
+	border-radius:2px;
+	width:100%;
+	outline:2px solid #000;
+	text-align:center;
+	font-size:1.2em;
+}
+form div{
+display:flex;
+justify-content:space-around;
+padding:8px;
+}
+
+.prev-area{
+height:200px;
+width:100%;
+min-width:400px;
+outline:2px groove #ccc;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:3px;
+overflow-hidden;
+}
+
+img#prev-image {
+	
+	height:100%;
+	width:auto;
+	background-color:inherit;
+
+}
+
+.wrapper div.title{
+text-align:center;
+padding-bottom:5px;
+}
+	</style>
+
+</head>
+<body>
+
+	<div class ="wrapper" >
+		<div class="title">
+			<p>Paste your image_url below and preview, then sumit<br/>  or <br />
+			<em> try GET <u> /filteredimage?image_url={{}}</u> </em>
+	</p>
+		</div>
+
+			<form action ="/filteredimage">
+				<input 
+					type = "text" 
+					name = "image_url" 
+					id = "img_url"
+					placeholder ="Paste image url here"
+					/>
+				<div class ="tbn-box">
+				<button id ="submit-btn"  type="submit">Submit</button>													
+				<button type="reset">Clear</button>
+			    </div>
+			</form>
+		<div class = "prev-area">
+			<img id = "prev-image"  alt ="lovely preview image" />
+		</div>
+	</div>
+</body>
+
+<script>
+	var _input = document.querySelector("#img_url");
+	var _img = document.querySelector("#prev-image");
+
+_input.addEventListener("change", function(evt){
+	_img.setAttribute("src", evt.target.value);
+
+});	
+	</script>
+
+</html>
