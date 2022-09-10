@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import path from 'path';
 //import isImageURL from 'image-url-validator';
 
 import {filterImageFromURL, deleteLocalFiles,isImageUrl} from './util/util';
@@ -69,7 +70,8 @@ filterImageFromURL(url)
   // Root Endpoint
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
-    res.send("try GET /filteredimage?image_url={{}}")
+   // res.send("try GET /filteredimage?image_url={{}}")
+   res.sendFile(path.join(__dirname+"/pages/index.html"));
   } );
   
 
