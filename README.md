@@ -6,10 +6,10 @@
 
 ## ====================================================
 ## AWS beanstalk url:
-http://udacity-c2-image-filter-dev2.us-east-1.elasticbeanstalk.com/
+### http://udacity-c2-image-filter-dev2.us-east-1.elasticbeanstalk.com/
 
 ## Click Here to Try:
-http://udacity-c2-image-filter-dev2.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://thumbs.dreamstime.com/z/sunrise-over-beach-cancun-beautiful-mexico-40065727.jpg
+### http://udacity-c2-image-filter-dev2.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://thumbs.dreamstime.com/z/sunrise-over-beach-cancun-beautiful-mexico-40065727.jpg
 
 ## ==========================================================
 ## Custom Domain url:
@@ -18,7 +18,7 @@ http://udacity-c2-image-filter-dev2.us-east-1.elasticbeanstalk.com/filteredimage
 ## Click Here to Try:
 ### https://mwerosimagefilter.tk/filteredimage?image_url=https://thumbs.dreamstime.com/z/sunrise-over-beach-cancun-beautiful-mexico-40065727.jpg
 
-=====================================================================
+## =====================================================================
 
 
 ## Udagram Image Filtering Microservice
