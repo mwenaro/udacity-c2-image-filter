@@ -8,14 +8,14 @@
 ## AWS beanstalk url:
 ### http://udacity-c2-image-filter-dev2.us-east-1.elasticbeanstalk.com/
 
-## Click Here to Try:
+## Click Link below to try:
 ### http://udacity-c2-image-filter-dev2.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://thumbs.dreamstime.com/z/sunrise-over-beach-cancun-beautiful-mexico-40065727.jpg
 
 ## ==========================================================
 ## Custom Domain url:
 ### https://mwerosimagefilter.tk/
 
-## Click Here to Try:
+## Click link below to try:
 ### https://mwerosimagefilter.tk/filteredimage?image_url=https://thumbs.dreamstime.com/z/sunrise-over-beach-cancun-beautiful-mexico-40065727.jpg
 
 ## =====================================================================
