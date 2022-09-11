@@ -1,4 +1,4 @@
-import express from 'express';
+import express, {Response,Request} from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 //import isImageURL from 'image-url-validator';
@@ -11,7 +11,7 @@ import {filterImageFromURL, deleteLocalFiles,isImageUrl} from './util/util';
   const app = express();
 
   // Set the network port
-  const port = process.env.PORT || 8082;
+  const port:number = process.env.PORT || 8082;
   
   // Use the body parser middleware for post requests
   app.use(bodyParser.json());
@@ -33,7 +33,7 @@ import {filterImageFromURL, deleteLocalFiles,isImageUrl} from './util/util';
   /**************************************************************************** */
 
   //! END @TODO1
- app.get('/filteredimage', (req, res)=>{
+ app.get('/filteredimage', (req:Request, res:Response)=>{
 	//retrieving and validationg the passed image_url
 	 //
 	 const url:string = req.query.image_url as string;
@@ -51,7 +51,7 @@ filterImageFromURL(url)
 
 	files.push(filtered_img_url);
 
-      res.sendFile(filtered_img_url, async (err)=>{
+      res.status(200).sendFile(filtered_img_url, async (err)=>{
 
 	      if(err)
 		      res.status(500).json({msg:"Internal Server Error. Try again"});
@@ -61,7 +61,7 @@ filterImageFromURL(url)
       });
 
 })
-.catch(err => res.json({msg:err}));
+.catch(err => res.status(500).json({msg:"Something went wrong"}));
 	
 
 
@@ -69,9 +69,9 @@ filterImageFromURL(url)
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async ( req: Request, res: Response ) => {
    // res.send("try GET /filteredimage?image_url={{}}")
-   res.sendFile(path.join(__dirname+"/pages/index.html"));
+   res.status(200).sendFile(path.join(`${__dirname}/pages/index.html`));
   } );
   
 
@@ -81,3 +81,4 @@ filterImageFromURL(url)
       console.log( `press CTRL+C to stop server` );
   } );
 })();
+
