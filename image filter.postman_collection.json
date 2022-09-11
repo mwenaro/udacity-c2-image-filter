@@ -5,5 +5,31 @@
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18994774"
 	},
-	"item": []
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mwerosimagefilter.tk/filteredimage?image_url=https%3A%2F%2Fthumbs.dreamstime.com%2Fz%2Fsunrise-over-beach-cancun-beautiful-mexico-40065727.jpg",
+					"protocol": "https",
+					"host": [
+						"mwerosimagefilter",
+						"tk"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https%3A%2F%2Fthumbs.dreamstime.com%2Fz%2Fsunrise-over-beach-cancun-beautiful-mexico-40065727.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
